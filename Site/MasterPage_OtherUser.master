@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_OtherUser.master.cs" Inherits="MasterPage_OtherUser" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="StyleSheet_OtherUserMaster.css" rel="stylesheet" />
+    <link href="StyleSheet_CommonOnAll.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <asp:HyperLink ID="HyperLink9" name="GoToTop" runat="server"></asp:HyperLink>
+        <asp:Panel ID="Panel1" runat="server">
+            <table class="wrapper" style="border-collapse: collapse">
+                <tr class="header">
+                    <td colspan="3"></td>
+                </tr>
+                <tr class="navigation">
+                    <td colspan="3">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="16px" Style="color: #FFFFFF" ForeColor="#CECE00" >
+                            <DynamicHoverStyle ForeColor="#00FFCC" />
+                            <DynamicMenuItemStyle BorderColor="Black" BorderStyle="Solid" BackColor="#3333FF" HorizontalPadding="9px" VerticalPadding="2px" ForeColor="#CECE00" />
+                            <Items>
+                                <asp:MenuItem Text="HOME" Value="HOME" NavigateUrl="~/Home_OtherUser.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="HOSPITAL" Value="HOSPITAL" NavigateUrl="~/Hospital_OtherUserMaster.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EntryUserForm_OtherUserMaster.aspx" Text="ENTRY USER" Value="ENTRY USER"></asp:MenuItem>
+                                <asp:MenuItem Text="PATIENT" Value="PATIENT" NavigateUrl="~/Patient_OtherUserMaster.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="ANALYSIS" Value="ANALYSIS" NavigateUrl="~/Analysis_OtherUserMaster.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="MESSAGE" Value="MESSAGE" NavigateUrl="~/Message_OtherUserMaster.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="LOG" Value="LOG">
+                                    <asp:MenuItem Text="Patient" Value="Patient" NavigateUrl="~/Log_Patient_OtherUserMaster.aspx" ></asp:MenuItem>
+                                    <asp:MenuItem Text="EntryUser" Value="EntryUser" NavigateUrl="~/Log_EntryUser_OtherUserMaster.aspx"></asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle ForeColor="#00FFCC" />
+                            <StaticMenuItemStyle Font-Size="X-Large" HorizontalPadding="20px" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr class="searchRegister">
+                    <td>
+                        <%--<div class="searchTextbox">
+                            <asp:TextBox ID="searchTb" runat="server" Height="28px" Width="215px" placeholder="Search patient, disease"></asp:TextBox>
+                        </div>
+                        <div class="searchIcon">
+                            <asp:ImageButton ID="searchImg" runat="server" Height="28px" ImageUrl="~/Images/searchIcon.jpg" BorderStyle="Groove" ImageAlign="Middle" CausesValidation="False" />
+                        </div>--%>
+                    </td>
+                    <td class="register" width="441px">
+                        Welcome
+                        <asp:Label ID="lblUser" runat="server" Text="Label"></asp:Label>
+                        &nbsp;
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/EditProfileNew_OtherUser.aspx" CssClass="registerLink">Edit Profile</asp:HyperLink>
+                        &nbsp;|&nbsp;&nbsp;<asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CssClass="registerLink" OnClick="LinkButton1_Click">Log out</asp:LinkButton>
+                        &nbsp;
+                        <%--<asp:HyperLink ID="HyperLink9" runat="server" CssClass="registerLink">Log out</asp:HyperLink>--%><%--<asp:HyperLink runat="server" NavigateUrl="~/Login.aspx" CssClass="registerLink">Register</asp:HyperLink>
+                        &nbsp;|&nbsp;
+                        <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/LoginNew.aspx" CssClass="loginLink">Login</asp:HyperLink>--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="socialIcons" style="text-align: right">&nbsp;
+                        <%--<asp:ImageButton ID="fbImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/facebook.jpg" PostBackUrl="https://www.facebook.com" OnClientClick="target='_blank'" />
+                        <asp:Image ID="Image1" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                        <asp:ImageButton ID="googleplusImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/googleplus.jpg" PostBackUrl="http://www.plus.google.com/" OnClientClick="target='_blank'" />
+                        <asp:Image ID="Image2" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                        <asp:ImageButton ID="twitterImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/twitter.jpg" PostBackUrl="http://www.twitter.com/" OnClientClick="target='_blank'" />--%>
+                    </td>
+                </tr>
+                <tr class="body">
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr class="footer">
+                    <td colspan="3">
+                        <div class="footerLogoCopyright">
+                            <div class="footerLogo"></div>
+                            <div class="footerCopyright">
+                                Health Information System &copy; 2014
+                            </div>
+                        </div>
+                        <div class="footerContactUsSocialSite">
+                            <div class="footerSocialSite">
+                                <asp:ImageButton ID="ImageButton1" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/facebook.jpg" PostBackUrl="https://www.facebook.com" OnClientClick="form1.target='_blank'" CausesValidation="False" />
+                                <asp:Image ID="Image3" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                                <asp:ImageButton ID="ImageButton2" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/googleplus.jpg" PostBackUrl="https://www.plus.google.com/" OnClientClick="form1.target='_blank'" CausesValidation="False" />
+                                <asp:Image ID="Image4" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                                <asp:ImageButton ID="ImageButton3" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/twitter.jpg" PostBackUrl="https://www.twitter.com/" OnClientClick="form1.target='_blank'" CausesValidation="False" />
+
+                            </div>
+                            <div class="footerContact">
+                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ContactUs_OtherUserMaster.aspx" CssClass="footerContactUs">Contact Us</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div class="footerAllMainCategories">
+                            <div class="footerHome">
+                                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="Home_OtherUser.aspx" CssClass="footerHomeLink">Home</asp:HyperLink>
+                            </div>
+                            <div class="footerHospital">
+                                <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="Hospital_OtherUserMaster.aspx" CssClass="footerHospitalLink">Hospital</asp:HyperLink>
+                            </div>
+                            <div class="footerEntryUser">
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Hospital_OtherUserMaster.aspx" CssClass="formlink">Entry User</asp:HyperLink>
+                            </div>
+                            <div class="footerPatient">
+                                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="Patient_OtherUserMaster.aspx" CssClass="footerPatientLink">Patient</asp:HyperLink>
+                            </div>
+                            <div class="footerAnalysis">
+                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Analysis_OtherUserMaster.aspx" CssClass="footerAnalysisLink">Analysis</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div class="footerAboutUsHitCount">
+                            <div class="footerAboutUs">
+                                <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AboutUs_OtherUserMaster.aspx" CssClass="footerAboutUsLink">About Us</asp:HyperLink>
+                            </div>
+                            <div class="footerHitCount">
+                                <asp:HyperLink ID="HyperLink10" runat="server" CssClass="goToTop" href="#GoToTop">Go To Top</asp:HyperLink>
+                                &nbsp;
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+
+    </form>
+</body>
+</html>

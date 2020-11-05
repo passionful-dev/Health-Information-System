@@ -1,0 +1,289 @@
+﻿.wrapper {
+    width: 1000px;
+    margin: auto;
+}
+
+.header {
+    width: 1000px;
+    height: 159px;
+    background-image: url('Images/newHeaderTry1.jpg');
+    
+}
+
+.navigation {
+    width: 1000px;
+    height: 40px;
+    background-image: url('Images/navigation.jpg');
+    color: #6600FF;
+    text-decoration: none;
+}
+
+.searchRegister {
+    width: 1000px;
+    height: 50px;
+    background-image: url('Images/searchRegister.jpg');
+    color: grey;
+}
+
+.searchTextbox {
+    clear: both;
+    display: inline;
+    float: left;
+    margin-left: 44px;
+}
+
+.searchIcon {
+    display: inline;
+    float: left;
+}
+
+.register {
+    text-align: right;
+}
+
+.registerLink, .loginLink {
+    text-decoration: none;
+    color: #CECE00;
+}
+
+.registerLink.registerLink:visited, .loginLink.loginLink:visited {
+    /*color: #CC9900;
+    color: #CECE00;
+    color: red;*/
+}
+
+.registerLink.registerLink:hover, .loginLink.loginLink:hover {
+    color: #00FFCC; 
+    /*  color: white;
+        background: #0083C1;*/
+}
+
+.socialIcons {
+    text-align: left;
+    padding-right: 52px;
+}
+
+.body {
+    width: 1000px;
+    height: 416px; /*background-color: #FFFFEC;*/
+    background-color: #F9F9FF;
+}
+
+.pics {
+    width: 1000px;
+    /*background-image: url('Images/searchRegister.jpg');*/
+    
+    height: 78px;
+
+}
+
+#picsScroll {
+    width: 500px;
+    display: inline;
+
+}
+
+#picsFacebookLike {
+    width: 500px;
+    display: inline;
+    float: right;
+}
+
+.footer {
+    width: 1000px;
+    height: 100px;
+    background-image: url('Images/footer.jpg');
+}
+
+.footerLogoCopyright {
+    clear: both;
+    width: 250px;
+    display: inline;
+    float: left;
+    margin-top: 5px;
+}
+
+.footerLogo {
+    width: 250px;
+    display: block;
+    float: left;
+
+    background-image: url('Images/newFooterLogo.jpg');
+    background-repeat: no-repeat;
+    height: 70px;
+}
+
+.footerCopyright {
+    width: 250px;
+    display: block;
+    float: left;
+    text-align: center;
+    color: grey;
+}
+
+.footerContactUsSocialSite {
+    width: 250px;
+    display: inline;
+    float: left;
+    margin-top: 5px;
+}
+
+.footerContact {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-top: 5px;
+    margin-left: 55px;
+}
+
+.footerSocialSite {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-left: 55px;
+}
+
+/*
+#footerFacebook {
+    width: 83px;
+    display: inline;
+    float: left;
+}
+
+#footerGoogleplus {
+    width: 84px;
+    display: inline;
+    float: left;
+}
+
+#footerTwitter {
+    width: 83px;
+    display: inline;
+    float: left;
+}
+*/
+
+.footerAllMainCategories {
+    width: 250px;
+    display: inline;
+    float: left;
+
+    margin-top: 5px;
+    color: grey;
+}
+
+.footerRegisterLogin {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+}
+
+.footerHome {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+}
+
+.footerHealth {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+}
+
+.footerHospital {
+    width: 250px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+}
+
+.footerAboutUsHitCount {
+    width: 245px;
+    display: inline;
+    float: left;
+
+    margin-top: 5px;
+    color: #CECE00;
+}
+
+.footerAboutUs {
+    width: 245px;
+    display: block;
+    float: left;
+    margin-left: 60px;
+}
+
+.footerHitCount {
+    width: 245px;
+    display: block;
+    float: left;
+    margin-left: 60px;
+    color: grey;
+}
+
+/*Footer Contact Us*/
+.footerContactUs {
+    text-decoration: none;
+    color: #CECE00;
+}
+
+/*#footerContactUs.footerContactUs:visited {
+    color: #CC9900;
+}*/
+
+.footerContactUs.footerContactUs:hover {
+    /*color: white;
+    background: #0083C1;*/
+    color: #00FFCC;
+}
+
+/*Footer RegisterLogin*/
+.footerRegisterLink, .footerLoginLink {
+    text-decoration: none;
+    color: #CECE00;
+}
+
+/*#footerRegisterLink.footerRegisterLink:visited, #footerLoginLink.footerLoginLink:visited {
+    color: #CC9900;
+}*/
+
+.footerRegisterLink.footerRegisterLink:hover, .footerLoginLink.footerLoginLink:hover {
+    /*color: white;
+    background: #0083C1;*/
+    color: #00FFCC;
+}
+
+/*Footer AboutUsLink*/
+.footerAboutUsLink {
+    text-decoration: none;
+    color: #CECE00;
+}
+
+/*#footerAboutUsLink.footerAboutUsLink:visited {
+    color: #CC9900;
+}*/
+
+.footerAboutUsLink.footerAboutUsLink:hover {
+    /*color: white;
+    background: #0083C1;*/
+    color: #00FFCC;
+}
+
+/*Footer Home Health Hospital Link*/
+.footerHomeLink, .footerHealthLink, .footerHospitalLink {
+    text-decoration: none;
+    color: #CECE00;
+}
+
+/*#footerHomeLink.footerHomeLink:visited, #footerHealthLink.footerHealthLink:visited, #footerHospitalLink.footerHospitalLink:visited {
+    color: #CC9900;
+}*/
+
+.footerHomeLink.footerHomeLink:hover, .footerHealthLink.footerHealthLink:hover, .footerHospitalLink.footerHospitalLink:hover {
+    /*color: white;
+    background: #0083C1;*/
+    color: #00FFCC;
+}

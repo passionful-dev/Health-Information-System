@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <asp:Panel ID="Panel1" runat="server">
+            <table class="wrapper" style="border-collapse: collapse">
+                <tr class="header">
+                    <td colspan="3"></td>
+                </tr>
+                <tr class="navigation">
+                    <td colspan="3">
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="16px" Style="color: #FFFFFF" ForeColor="#CECE00">
+                            <Items>
+                                <asp:MenuItem Text="HOME" Value="HOME"></asp:MenuItem>
+                                <asp:MenuItem Text="HEALTH" Value="HEALTH"></asp:MenuItem>
+                                <asp:MenuItem Text="HOSPITAL" Value="HOSPITAL"></asp:MenuItem>
+                                <asp:MenuItem Text="ABOUT US" Value="ABOUT US"></asp:MenuItem>
+                                <asp:MenuItem Text="CONTACT US" Value="CONTACT US"></asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#0083C1" ForeColor="White" />
+                            <StaticMenuItemStyle Font-Size="X-Large" HorizontalPadding="44px" />
+                            <StaticSelectedStyle ForeColor="#CC9900" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr class="searchRegister">
+                    <td>
+                        <div class="searchTextbox">
+                            <asp:TextBox ID="searchTb" runat="server" Height="28px" Width="215px" placeholder="Start your search here"></asp:TextBox>
+                        </div>
+                        <div class="searchIcon">
+                            <asp:ImageButton ID="searchImg" runat="server" Height="28px" ImageUrl="~/Images/searchIcon.jpg" BorderStyle="Groove" ImageAlign="Middle" />
+                        </div>
+                    </td>
+                    <td class="register" width="441px">
+                        <asp:HyperLink ID="registerLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="registerLink">Register</asp:HyperLink>
+                        &nbsp;|&nbsp;
+                        <asp:HyperLink ID="loginLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="loginLink">Login</asp:HyperLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td class="socialIcons" style="text-align: right">&nbsp;
+                        <asp:ImageButton ID="fbImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/facebook.jpg" PostBackUrl="https://www.facebook.com" OnClientClick="form1.target='_blank'" />
+                        <asp:Image ID="Image1" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                        <asp:ImageButton ID="googleplusImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/googleplus.jpg" PostBackUrl="https://plus.google.com/" OnClientClick="form1.target='_blank'" />
+                        <asp:Image ID="Image2" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                        <asp:ImageButton ID="twitterImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/twitter.jpg" PostBackUrl="https://twitter.com/" OnClientClick="form1.target='_blank'" />
+                    </td>
+                </tr>
+                <tr class="body">
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr class="pics">
+                    <!--<td colspan="2" class="picsScroll">
+
+                        </td>
+                        <td colspan="2" class="picsFacebookLike">
+
+                        </td>-->
+                    <td colspan="3">
+                        <div id="picsScroll">picsScroll</div>
+                        <div id="picsFacebookLike">picsFacebookLike</div>
+                    </td>
+                </tr>
+                <tr class="footer">
+                    <td colspan="3">
+                        <div id="footerLogoCopyright">
+                            <div id="footerLogo"></div>
+                            <div id="footerCopyright">
+                                Health Information System &copy; 2014
+                            </div>
+                        </div>
+                        <div id="footerContactUsSocialSite">
+                            <div id="footerSocialSite">
+                                <asp:ImageButton ID="footerFbImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/facebook.jpg" PostBackUrl="https://www.facebook.com" OnClientClick="form1.target='_blank'" />
+                                <asp:Image ID="Image3" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                                <asp:ImageButton ID="footerGoogleplusImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/googleplus.jpg" PostBackUrl="https://plus.google.com/" OnClientClick="form1.target='_blank'" />
+                                <asp:Image ID="Image4" runat="server" Height="40px" ImageAlign="Middle" ImageUrl="~/Images/iconSeparator.jpg" Width="1px" />
+                                <asp:ImageButton ID="footerTwitterImgBtn" runat="server" BorderStyle="Solid" Height="35px" ImageAlign="Middle" ImageUrl="~/Images/twitter.jpg" PostBackUrl="https://twitter.com/" OnClientClick="form1.target='_blank'" />
+
+                                <!--
+                                <div id="footerFacebook">facebook</div>
+                                <div id="footerGoogleplus">googlePlus</div>
+                                <div id="footerTwitter">twitter</div>
+                                -->
+                            </div>
+                            <div id="footerContact">
+                                <asp:HyperLink ID="footerContactUs" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerContactUs">Contact Us</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div id="footerAllMainCategories">
+                            <div id="footerRegisterLogin">
+                                
+                            <asp:HyperLink ID="footerRegisterLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerRegisterLink">Register</asp:HyperLink>
+                                &nbsp;|&nbsp;
+                            <asp:HyperLink ID="footerLoginLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerLoginLink">Login</asp:HyperLink>
+                            </div>
+                            <div id="footerHome">
+                                <asp:HyperLink ID="footerHomeLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerHomeLink">Home</asp:HyperLink>
+                            </div>
+                            <div id="footerHealth">
+                                <asp:HyperLink ID="footerHealthLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerHealthLink">Health</asp:HyperLink>
+                            </div>
+                            <div id="footerHospital">
+                                <asp:HyperLink ID="footerHospitalLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerHospitalLink">Hospital</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div id="footerAboutUsHitCount">
+                            <div id="footerAboutUs">
+                                <asp:HyperLink ID="footerAboutUsLink" runat="server" ForeColor="#CECE00" NavigateUrl="~/Login.aspx" CssClass="footerAboutUsLink">About Us</asp:HyperLink>
+                            </div>
+                            <div id="footerHitCount">
+                                Hit Count<br />
+                                <asp:Label ID="hitCount" runat="server" Text="0"></asp:Label>
+                                &nbsp;
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+
+    </form>
+</body>
+</html>

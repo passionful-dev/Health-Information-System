@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_EntryUserForm_Report_OtherUserMaster" targetNamespace="http://tempuri.org/DataSet_EntryUserForm_Report_OtherUserMaster.xsd" xmlns:mstns="http://tempuri.org/DataSet_EntryUserForm_Report_OtherUserMaster.xsd" xmlns="http://tempuri.org/DataSet_EntryUserForm_Report_OtherUserMaster.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="HISConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HISConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.HISConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HISConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>		 SELECT Users.userRegisteredDate, Users.username, 
+         EntryUser.entryUserFirstName + '  ' + EntryUser.entryUserMiddleName + '  ' + EntryUser.entryUserLastName As Name, 
+         EntryUser.entryUserDesignation, EntryUser.entryUserHospital, EntryUser.entryUserInactiveOrActive, 
+         EntryUser.entryUserDob, EntryUser.entryUserGender, EntryUser.entryUserContact  + ' ; ' +  
+         EntryUser.entryUserSecContact As Contacts, Users.userEmail  + ' ; ' +  Users.userSecEmail As Emails,
+         EntryUser.entryUserHouseAdd  + ' ; ' +   
+         EntryUser.entryUserCity  + ' ; ' +  EntryUser.entryUserDistrict
+           + ' ; ' +  EntryUser.entryUserCountry As Address
+         FROM Users INNER JOIN EntryUser ON Users.userId = EntryUser.userId 
+         WHERE Users.userType='Entry' 
+         ORDER BY CONVERT(DATETIME, userRegisteredDate, 103) DESC
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="userRegisteredDate" DataSetColumn="userRegisteredDate" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="entryUserDesignation" DataSetColumn="entryUserDesignation" />
+              <Mapping SourceColumn="entryUserHospital" DataSetColumn="entryUserHospital" />
+              <Mapping SourceColumn="entryUserInactiveOrActive" DataSetColumn="entryUserInactiveOrActive" />
+              <Mapping SourceColumn="entryUserDob" DataSetColumn="entryUserDob" />
+              <Mapping SourceColumn="entryUserGender" DataSetColumn="entryUserGender" />
+              <Mapping SourceColumn="Contacts" DataSetColumn="Contacts" />
+              <Mapping SourceColumn="Emails" DataSetColumn="Emails" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_EntryUserForm_Report_OtherUserMaster" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSet_EntryUserForm_Report_OtherUserMaster" msprop:Generator_UserDSName="DataSet_EntryUserForm_Report_OtherUserMaster">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userRegisteredDate" msprop:Generator_ColumnVarNameInTable="columnuserRegisteredDate" msprop:Generator_ColumnPropNameInRow="userRegisteredDate" msprop:Generator_ColumnPropNameInTable="userRegisteredDateColumn" msprop:Generator_UserColumnName="userRegisteredDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="62" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entryUserDesignation" msprop:Generator_ColumnVarNameInTable="columnentryUserDesignation" msprop:Generator_ColumnPropNameInRow="entryUserDesignation" msprop:Generator_ColumnPropNameInTable="entryUserDesignationColumn" msprop:Generator_UserColumnName="entryUserDesignation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entryUserHospital" msprop:Generator_ColumnVarNameInTable="columnentryUserHospital" msprop:Generator_ColumnPropNameInRow="entryUserHospital" msprop:Generator_ColumnPropNameInTable="entryUserHospitalColumn" msprop:Generator_UserColumnName="entryUserHospital">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entryUserInactiveOrActive" msprop:Generator_ColumnVarNameInTable="columnentryUserInactiveOrActive" msprop:Generator_ColumnPropNameInRow="entryUserInactiveOrActive" msprop:Generator_ColumnPropNameInTable="entryUserInactiveOrActiveColumn" msprop:Generator_UserColumnName="entryUserInactiveOrActive">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entryUserDob" msprop:Generator_ColumnVarNameInTable="columnentryUserDob" msprop:Generator_ColumnPropNameInRow="entryUserDob" msprop:Generator_ColumnPropNameInTable="entryUserDobColumn" msprop:Generator_UserColumnName="entryUserDob">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="entryUserGender" msprop:Generator_ColumnVarNameInTable="columnentryUserGender" msprop:Generator_ColumnPropNameInRow="entryUserGender" msprop:Generator_ColumnPropNameInTable="entryUserGenderColumn" msprop:Generator_UserColumnName="entryUserGender">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacts" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnContacts" msprop:Generator_ColumnPropNameInRow="Contacts" msprop:Generator_ColumnPropNameInTable="ContactsColumn" msprop:Generator_UserColumnName="Contacts" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="73" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emails" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmails" msprop:Generator_ColumnPropNameInRow="Emails" msprop:Generator_ColumnPropNameInTable="EmailsColumn" msprop:Generator_UserColumnName="Emails" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="103" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="114" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

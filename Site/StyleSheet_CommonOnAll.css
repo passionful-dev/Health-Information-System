@@ -1,0 +1,46 @@
+﻿body {
+}
+
+.separator {
+    border-top-style: solid;
+    border-top-color: grey;
+}
+
+/*Master page Link*/
+.link {
+    color: #0000FF;
+}
+
+.link.link:hover {
+    color: #00C6C6;
+}
+
+/*headerlink*/
+.headerlink {
+    color: black;
+    text-decoration: none;
+}
+
+.headerlink.headerlink:hover {
+    color: #000099;
+}
+
+/*Inside Form Link*/
+.formlink {
+    color: #CECE00;
+    text-decoration: none;
+}
+
+.formlink.formlink:hover {
+    color: #00FFCC;
+}
+
+/*GoToTop Link*/
+.goToTop {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+.goToTop.goToTop:hover {
+    color: #00FFCC;
+}

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Patient_Report_OtherUserMaster" targetNamespace="http://tempuri.org/DataSet_Patient_Report_OtherUserMaster.xsd" xmlns:mstns="http://tempuri.org/DataSet_Patient_Report_OtherUserMaster.xsd" xmlns="http://tempuri.org/DataSet_Patient_Report_OtherUserMaster.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="HISConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HISConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.HISConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HISConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Users.userRegisteredDate, Users.username, 
+         Patient.patientFirstName + ' '+ Patient.patientMiddleName + ' '+  Patient.patientLastName As Name, 
+         Patient.patientDob, Patient.patientGender, Patient.patientContact + ' ; '+  
+         Patient.patientSecContact As Contacts, 
+         Users.userEmail + ' ; '+  Users.userSecEmail As Emails, Patient.patientHouseAdd + ' ; '+  
+         Patient.patientCity + ' ; '+  Patient.patientDistrict + ' ; '+ Patient.patientCountry 
+         As Address
+         FROM Users INNER JOIN Patient ON Users.userId = Patient.userId 
+         WHERE Users.userType='Patient'
+         ORDER BY CONVERT(DATETIME, userRegisteredDate, 103) DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="userRegisteredDate" DataSetColumn="userRegisteredDate" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="patientDob" DataSetColumn="patientDob" />
+              <Mapping SourceColumn="patientGender" DataSetColumn="patientGender" />
+              <Mapping SourceColumn="Contacts" DataSetColumn="Contacts" />
+              <Mapping SourceColumn="Emails" DataSetColumn="Emails" />
+              <Mapping SourceColumn="Address" DataSetColumn="Address" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Patient_Report_OtherUserMaster" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet_Patient_Report_OtherUserMaster" msprop:Generator_DataSetName="DataSet_Patient_Report_OtherUserMaster">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="userRegisteredDate" msprop:Generator_ColumnVarNameInTable="columnuserRegisteredDate" msprop:Generator_ColumnPropNameInRow="userRegisteredDate" msprop:Generator_ColumnPropNameInTable="userRegisteredDateColumn" msprop:Generator_UserColumnName="userRegisteredDate">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="62" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientDob" msprop:Generator_ColumnVarNameInTable="columnpatientDob" msprop:Generator_ColumnPropNameInRow="patientDob" msprop:Generator_ColumnPropNameInTable="patientDobColumn" msprop:Generator_UserColumnName="patientDob">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="patientGender" msprop:Generator_ColumnVarNameInTable="columnpatientGender" msprop:Generator_ColumnPropNameInRow="patientGender" msprop:Generator_ColumnPropNameInTable="patientGenderColumn" msprop:Generator_UserColumnName="patientGender">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacts" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnContacts" msprop:Generator_ColumnPropNameInRow="Contacts" msprop:Generator_ColumnPropNameInTable="ContactsColumn" msprop:Generator_UserColumnName="Contacts" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="73" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emails" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEmails" msprop:Generator_ColumnPropNameInRow="Emails" msprop:Generator_ColumnPropNameInTable="EmailsColumn" msprop:Generator_UserColumnName="Emails" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="103" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="114" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
